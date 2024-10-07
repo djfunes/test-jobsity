@@ -17,6 +17,7 @@
 
     <properties>
         <java.version>17</java.version>
+        <main.class>com.davidfunes.test.TestApplication</main.class>
     </properties>
 
     <dependencies>
@@ -87,6 +88,15 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--Maven Exec Plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>${main.class}</mainClass> <!-- This refers to your main class -->
+                </configuration>
             </plugin>
         </plugins>
     </build>
